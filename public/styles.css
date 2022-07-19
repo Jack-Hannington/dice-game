@@ -70,14 +70,19 @@ header, .current-score-container {
 }
 
 .bottom-bar {
-    width:100%;
+
     display:flex;
+    flex-direction: column;
     justify-content: center;
-    align-items: baseline;
-    position:absolute;
+    align-items: center;
     bottom:0;
-    padding-bottom:10px;
+    padding:20px;
+    text-align: center;
 }
+
+.bottom-bar > h4 {
+    margin-bottom:0px;
+};
 
 .active {
     background-color: #C2FBD7;
