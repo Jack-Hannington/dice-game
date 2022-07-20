@@ -5,6 +5,7 @@ body, input, button {
 
 h1 {
     font-size: 55px;
+    margin-bottom:10px;
 }
 
 .container {
@@ -145,4 +146,23 @@ button {
   .red-game-button:hover {
     box-shadow: rgba(187, 44, 44, 0.2) 0 -25px 18px -14px inset,rgba(187, 44, 44, 0.15) 0 1px 2px,rgba(187, 44, 61, 0.15) 0 2px 4px,rgba(187, 44, 75, 0.15) 0 4px 8px,rgba(187, 44, 49, 0.15) 0 8px 16px,rgba(44, 187, 99, .15) 0 16px 32px;
     transform: scale(1.05) rotate(-1deg);
+  }
+
+
+  .dice-icon {
+      display:none;
+  }
+
+  .show {
+      display: block;
+  }
+
+
+  .dice-container {
+      display:flex;
+      flex-direction: column;
+  }
+  .dice-image {
+      width:60px;
+      margin-bottom:10px;
   }

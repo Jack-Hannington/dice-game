@@ -32,12 +32,15 @@
         <div class="game-board">
             <div class="current-score-container">
                 <p>Current score:</p>
-                <h2 id="current-score">0</h2>
+                <h1 id="current-score">0</h1>
             </div>
        
             <div class="game-controls">   
                 <button id="roll" class="game-button red-game-button">Roll</button>         
-        <div class="dice-container">Dice:<h1 id="dice-number">0</h1>
+        <div class="dice-container">
+            <!-- Dice:<h1 id="dice-number">0 </h1> -->
+            <img class="dice-image" src="https://hannington.website/dice-game/bi_dice-1-fill.png">
+            <img class="dice-image dice-image2" src="https://hannington.website/dice-game/bi_dice-6-fill.png">
             </div>
            
             <button id="hold" class="game-button green-game-button">Hold</button></div>
@@ -58,7 +61,7 @@
         const player1Score = document.querySelector('#player-1-score');
         const player2Score = document.querySelector('#player-2-score');
         const currentScore = document.querySelector('#current-score');
-        const diceNumber = document.querySelector('#dice-number');
+        // const diceNumber = document.querySelector('#dice-number');
         const holdButton = document.querySelector('#hold');
         const rollButton = document.querySelector('#roll');
 
@@ -66,9 +69,11 @@
         let dice;
         let activePlayerScore;
         let activePlayer = player1Score;
-
+        let diceImage = document.querySelector('.dice-image');
+        let diceImage2 = document.querySelector('.dice-image2');
         let p1 = document.querySelector('#player-1 ');
         let p2 = document.querySelector('#player-2 ');
+
 
 
         //Store the high score
@@ -84,8 +89,15 @@
 
         rollButton.addEventListener('click', function rollDice() {
             dice = Math.floor(Math.random() * 6) + 1;
-            diceNumber.textContent = dice;
-            if (dice == 1) {
+            dice2 = Math.floor(Math.random() * 6) + 1;
+            diceImage.src ="https://hannington.website/dice-game/bi_dice-" + dice + "-fill.png";
+            diceImage2.src ="https://hannington.website/dice-game/bi_dice-" + dice2 + "-fill.png";
+            // diceNumber.textContent = dice; 
+            // Show/Hide dice if == number
+           
+
+
+            if (dice == 1 || dice2 == 1) {
                 activeScore = 0;
                 if (activePlayer == player1Score) {
                     activePlayer = player2Score;
@@ -98,7 +110,7 @@
                 }
                 //change active score;
             } else {
-                activeScore += parseInt(dice);
+                activeScore += parseInt(dice + dice2);
             }
             currentScore.textContent = activeScore;
             console.log(dice, activeScore);
